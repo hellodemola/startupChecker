@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&family=Inter:wght@300; 400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Inter', sans-serif;
+  font-weight: 400;
+  color: #0B2253;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +13,99 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 100vh;
+  padding: 2em 0;
+}
+
+.container {
+  width: 30em;
+}
+
+h1{
+  font-size: 1.563rem;
+  word-spacing: 2px;
+  font-weight: 700;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.phase-wrapper {
+  margin: 2em 0;
+  border: 2px solid #F7F9FB;
+}
+
+.phase-header {
+  background-color: #F7F9FB;
+  color: #0B2253;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+.phase-header h2 {
+  font-weight:  300;
+}
+
+.phase-header p {
+  font-weight:  300;
+  font-size: 0.8em;
+  letter-spacing: 0.9px;
+}
+
+.phase-content {
+  /* height: 20em; */
+  padding: 1em 0;
+}
+
+.phase-contain {
+  padding: 1em;
+}
+
+.phase-status {
+  display: flex;
+  align-items: center;
+}
+
+.phase-cirle {
+  height: 15px;
+  width: 15px;
+  margin-right: 0.5em;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.phase-footer {
+  width: 100%;
+  background-color: #F7F9FB;
+}
+
+.add-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-steps:hover{
+  cursor: pointer;
+}
+
+
+.footer-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 2em;
+}
+
