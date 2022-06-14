@@ -26,7 +26,7 @@ code {
 }
 
 .container {
-  width: 30em;
+  width: 25em;
 }
 
 h1{
@@ -66,6 +66,8 @@ h1{
 .phase-content {
   /* height: 20em; */
   padding: 1em 0;
+  max-height: 10em;
+  overflow-y: scroll;
 }
 
 .phase-contain {
@@ -95,6 +97,7 @@ h1{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .add-steps:hover{
@@ -109,3 +112,30 @@ h1{
   padding: 0.5em 2em;
 }
 
+
+/* 
+  Form sytlin another css file
+*/
+
+button{
+  background-color: #f6f9fb;
+  color: none;
+  border: 1px solid #f6f9fb;
+  margin-left: 0.2em;
+}
+
+button:hover{
+  background-color: #f6f9fb;
+  color: none;
+  border: 1px solid #f6f9fb;
+  display: inline;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #0B2253;
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: 300;
+  color: #0B2253;
+}
