@@ -38,6 +38,17 @@ export const taskSlice = createSlice({
       }
       )
     },
+    DeleteTask: (state, { payload }) => { 
+      const { stageId, taskId } = payload
+      state.startupTasks = state.startupTasks.map(each => {
+        if (each.id === stageId) {
+          each.todo = each.todo.filter(task => task.id !== taskId)
+          localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
+        }
+        return each
+      }
+      )
+    },
     changeProgress: (state, { payload }) => { 
       const { stageId, isCompleted } = payload
       state.startupTasks = state.startupTasks.map(each => {
@@ -75,6 +86,6 @@ export const taskSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { AddNewTask, ChangeTaskStatus, changeProgress } = taskSlice.actions
+export const { AddNewTask, ChangeTaskStatus, changeProgress, DeleteTask } = taskSlice.actions
 
 export default taskSlice.reducer

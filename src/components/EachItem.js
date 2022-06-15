@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeProgress, ChangeTaskStatus } from './reducer/TaskSlice';
+import { DeleteIcon } from './icons/deleteIcon';
+import { changeProgress, ChangeTaskStatus, DeleteTask } from './reducer/TaskSlice';
 
 const EachItem = ({ goal, id }) => {
   const { id: goalId,name, status } = goal;
@@ -24,16 +25,27 @@ const EachItem = ({ goal, id }) => {
     return isCompleted.length > 0;
   }
 
+  const handleDelete = () => {
+    dispatch(DeleteTask({ stageId: id, taskId: goalId }));
+  }
+
 
   return (
-    <div>
+    <div className='each-task' >
+      <div className='row'>
+        <div className='col' id="each-task">
       <input
         type="checkbox"
         checked={isCompleted} 
         onChange={handleClick}
         disabled={isTaskCompletedinPreviousStage()}
       />
-      <label>{name}</label>
+          <label>{name}</label>
+        </div>
+        <div className='col' id="delete-icon">
+        <span onClick={handleDelete}>{DeleteIcon}</span>
+        </div>
+        </div>
     </div>
   );
 };
