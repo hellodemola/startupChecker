@@ -6,7 +6,7 @@ const PhaseHeader = ({ data }) => (
       </h2>
     </div>
     <div className='phase-status'>
-      <div className='phase-cirle' />
+      <div className={data?.status === 'Not Started' ? 'phase-cirle' : ( data?.status === 'In Progress' ? 'phase-cirle-black' : 'phase-cirle-green')} />
       <p>{data.status}</p>
     </div>
   </div>
