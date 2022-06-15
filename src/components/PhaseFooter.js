@@ -1,3 +1,4 @@
+import { numTasks } from "../utilis/helpers";
 import useAddTask from "./customHooks/useAddTask";
 import { AddIcons } from "./icons/addIcons";
 
@@ -19,7 +20,7 @@ const PhaseFooter = ({ goals }) => {
           </form>
         </div>
         <div id='list-tasks'>
-          <p>{goals.todo.filter((task) => task.status).length > 0 ? `${goals.todo.filter((task) => task.status).length} / ${goals.todo.length} tasks` : `${goals?.todo?.length} tasks`}</p>
+          <p>{numTasks(goals)}</p>
         </div>
       </div>
     </div>

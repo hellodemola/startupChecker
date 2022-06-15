@@ -22,3 +22,6 @@ export const isTaskCompletedinPreviousStage = (startupTasks, id) => {
     const isCompleted = previousStage.filter((stage) => stage.todo.filter((task) => task.status).length < stage.todo.filter((task) => task).length);
     return isCompleted.length > 0;
 }
+
+// count nums of tasks that has been done
+export const numTasks = (goals) => goals?.todo?.filter((task) => task.status).length > 0 ? `${goals?.todo?.filter((task) => task.status).length} / ${goals?.todo?.length} tasks` : `${goals?.todo?.length} tasks`
