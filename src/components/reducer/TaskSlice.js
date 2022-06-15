@@ -1,9 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { stageData } from '../../utilis/data'
+import { createSlice } from '@reduxjs/toolkit';
+import { stageData } from '../../utilis/data';
 
 const initialState = {
-  startupTasks: stageData,
-  currentStage: 1,
+  startupTasks: JSON.parse(localStorage.getItem('stageData')) || stageData,
 }
 
 export const taskSlice = createSlice({
@@ -16,6 +15,7 @@ export const taskSlice = createSlice({
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
           each.todo.unshift(task)
+          localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
         }
         return each
       }
@@ -28,6 +28,7 @@ export const taskSlice = createSlice({
           each.todo = each.todo.map(task => {
             if (task.id === taskId) {
               task.status = isCompleted
+              localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
             }
             return task
           }
@@ -42,23 +43,28 @@ export const taskSlice = createSlice({
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
           if (isCompleted && each.todo.filter((e) => e.status).length < each.todo.length) { 
-           each.status = 'In Progress'
+            each.status = 'In Progress'
+            localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
 
             if (!isCompleted && each.todo.filter((e) => e.status).length < 1) { 
-           each.status = 'Not Started'
+              each.status = 'Not Started'
+               localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
             }
           
           if (!isCompleted && each.todo.filter((e) => e.status === true).length === 0) {
             each.status = 'Not Started'
+             localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
 
             if (!isCompleted && each.todo.filter((e) => e.status).length < each.todo.length && each.todo.filter((e) => e.status).length > 0) {
-            each.status = 'In Progress'
+              each.status = 'In Progress'
+               localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
 
            if (isCompleted && each.todo.filter((e) => e.status).length === each.todo.length) {
-            each.status = 'Completed'
+             each.status = 'Completed'
+              localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
         }
         return each
