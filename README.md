@@ -2,7 +2,10 @@
 
 The Audition app is a project that helps start-up manage their stage planning. This is an MVP version.
 
-The project can be viewed online via ('App URL')[https://startup-checker.vercel.app/]
+The project can be viewed online via ['Audition Assigment webapp'](https://startup-checker.vercel.app/)
+
+## Screensheet
+['App Screensheet']('./public/screenshots.png')
 
 ## Available Scripts
 
