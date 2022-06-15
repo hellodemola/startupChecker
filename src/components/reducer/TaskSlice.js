@@ -15,7 +15,7 @@ export const taskSlice = createSlice({
       const { stageId, task } = payload
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
-          each.todo.push(task)
+          each.todo.unshift(task)
         }
         return each
       }

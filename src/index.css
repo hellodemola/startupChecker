@@ -88,6 +88,24 @@ h1{
   display: inline-block;
 }
 
+.phase-cirle-green {
+  height: 15px;
+  width: 15px;
+  margin-right: 0.5em;
+  background-color: #00bb86;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.phase-cirle-black {
+  height: 15px;
+  width: 15px;
+  margin-right: 0.5em;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 .phase-footer {
   width: 100%;
   background-color: #F7F9FB;
