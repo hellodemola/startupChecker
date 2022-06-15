@@ -12,7 +12,7 @@ const Main = () => {
 
         <div id="each-stage">
           {startupTasks.map(each => (
-          <PhaseComp data={each} />
+          <PhaseComp data={each} key={each?.id} />
           ))}
         </div>
       </div>

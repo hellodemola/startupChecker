@@ -3,6 +3,7 @@ import { stageData } from '../../utilis/data'
 
 const initialState = {
   startupTasks: stageData,
+  currentStage: 1,
 }
 
 export const taskSlice = createSlice({
@@ -12,7 +13,6 @@ export const taskSlice = createSlice({
     // add to a task to a stage
     AddNewTask: (state, { payload }) => {
       const { stageId, task } = payload
-      debugger
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
           each.todo.push(task)
@@ -58,7 +58,6 @@ export const taskSlice = createSlice({
           }
 
            if (isCompleted && each.todo.filter((e) => e.status).length === each.todo.length) {
-
             each.status = 'Completed'
           }
         }
