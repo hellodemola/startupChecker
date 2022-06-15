@@ -1,3 +1,5 @@
+import { DeleteTask } from "../components/reducer/TaskSlice"
+
 export const generateToken = () => (Math.random() * 100000).toFixed(0)
 
 // handle status styling color className
