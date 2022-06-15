@@ -4,9 +4,6 @@ The Audition app is a project that helps start-up manage their stage planning. T
 
 The project can be viewed online via ['Audition Assigment webapp'](https://startup-checker.vercel.app/)
 
-## Screensheet
-['App Screensheet']('https://drive.google.com/file/d/1npXpyv-WQO4u4ES3M-ahB_CNtfR5tjHm/view?usp=sharing')
-
 ## Available Scripts
 
 In the project directory, you can run:

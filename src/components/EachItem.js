@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DeleteIcon } from './icons/deleteIcon';
-import { changeProgress, ChangeTaskStatus, DeleteTask } from './reducer/TaskSlice';
+import { ChangeProgress, ChangeTaskStatus, DeleteTask } from './reducer/TaskSlice';
 
 const EachItem = ({ goal, id }) => {
   const { id: goalId,name, status } = goal;
@@ -15,7 +15,7 @@ const EachItem = ({ goal, id }) => {
 
   useEffect(() => {
     dispatch(ChangeTaskStatus({ stageId: id, taskId: goalId, isCompleted }));
-    dispatch(changeProgress({ stageId: id, isCompleted }));
+    dispatch(ChangeProgress({ stageId: id, isCompleted }));
   }
     , [isCompleted]);
   
@@ -24,10 +24,13 @@ const EachItem = ({ goal, id }) => {
     const isCompleted = previousStage.filter((stage) => stage.todo.filter((task) => task.status).length < stage.todo.filter((task) => task).length);
     return isCompleted.length > 0;
   }
+  
 
   const handleDelete = () => {
     dispatch(DeleteTask({ stageId: id, taskId: goalId }));
   }
+
+
 
 
   return (
