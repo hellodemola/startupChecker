@@ -10,40 +10,34 @@ const PhaseFooter = ({ goals }) => {
   const addNewTask = (e) => {
     e.preventDefault();
     if (newTask !== "") {
-      dispatch(AddNewTask(
-        {
-          stageId: goals.id, task: {
+      dispatch(
+        AddNewTask({
+          stageId: goals.id,
+          task: {
             id: generateToken(),
             name: newTask,
-            status: true,
+            status: false,
           },
-        }
-
-      ));
+        })
+      );
       setNewTask("");
-    };
-  }
+    }
+  };
   return (
-    <div className="phase-footer">
-      <div className="footer-wrapper">
-        <div className="add-steps">
+    <div className='phase-footer'>
+      <div className='footer-wrapper'>
+        <div className='add-steps'>
           <form onSubmit={addNewTask}>
-            <input
-              type="text"
-              onChange={(e) => setNewTask(e.target.value)}
-              value={newTask}
-              placeholder="Add a task" />
-          <button type="submit">
-            {AddIcons}
-            </button>
+            <input type='text' onChange={(e) => setNewTask(e.target.value)} value={newTask} placeholder='Add a task' />
+            <button type='submit'>{AddIcons}</button>
           </form>
         </div>
-        <div id="list-tasks">
-          <p>{goals?.todo?.length} Tasks</p>
+        <div id='list-tasks'>
+          <p>{goals.todo.filter((task) => task.status).length > 0 ? `${goals.todo.filter((task) => task.status).length} / ${goals.todo.length} tasks` : `${goals?.todo?.length} tasks`}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default PhaseFooter;

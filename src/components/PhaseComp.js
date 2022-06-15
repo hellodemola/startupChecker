@@ -6,7 +6,7 @@ import PhaseWrapper from "./PhaseWrapper";
 const PhaseComp = ({ data }) => (
   <PhaseWrapper>
     <PhaseHeader data={data} />
-    <PhaseContent goals={data?.todo} />
+    <PhaseContent goals={data?.todo} id={data?.id} />
     <PhaseFooter goals={data} />
   </PhaseWrapper>
 )

@@ -2,12 +2,12 @@
     {
       id: 1,
       name: "Foundation",
-      status: "In Progress",
+      status: "Not Started",
       todo: [
         {
           id: 1,
           name: "Setup virtual office",
-          status: true,
+          status: false,
         }, 
         {
           id: 2,
@@ -29,24 +29,24 @@
     {
       id: 2,
       name: "Discovery",
-      status: "In Progress",
+      status: "Not Started",
       todo: [
         {
           id: 1,
           name: "Create roadmap",
-          status: true,
+          status: false,
         }
       ]
    },
     {
       id: 3,
       name: "Delivery",
-      status: "In Progress",
+      status: "Not Started",
       todo: [
         {
           id: 1,
           name: "Release marketing website",
-          status: true,
+          status: false,
         },
         {
           id: 2,
