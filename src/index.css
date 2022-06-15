@@ -157,3 +157,21 @@ input {
   font-weight: 300;
   color: #0B2253;
 }
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#delete-icon {
+  opacity: 0.1;
+}
+
+#delete-icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
