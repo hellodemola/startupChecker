@@ -1,14 +1,13 @@
 import { useSelector } from "react-redux";
 import { isTaskCompletedinPreviousStage } from "../utilis/helpers";
 import useDeleteItems from "./customHooks/useDeleteItems";
-import useStatus from "./customHooks/useStatus";
+import useChangeStatus from "./customHooks/useChangeStatus";
 import { DeleteIcon } from "./icons/deleteIcon";
 
 const EachItem = ({ goal, id }) => {
   const { id: goalId, name } = goal;
   const { startupTasks } = useSelector((state) => state.task);
-
-  const { handleCheck, isCompleted } = useStatus({ goal, id });
+  const { handleCheck, isCompleted } = useChangeStatus({ goal, id });
   const { handleDelete } = useDeleteItems({ stageId: id, taskId: goalId });
 
   return (
