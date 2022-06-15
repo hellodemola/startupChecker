@@ -1,9 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { stageData } from '../../utilis/data'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  startupTasks: stageData,
-  currentStage: 1,
+  startupTasks: JSON.parse(localStorage.getItem('stageData')),
 }
 
 export const taskSlice = createSlice({

@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PhaseComp from "./components/PhaseComp";
+import { stageData } from "./utilis/data";
 
 const Main = () => { 
+  useEffect(() => {
+    localStorage.setItem("stageData", JSON.stringify(stageData));
+  }, [])
   const { startupTasks } = useSelector((state) => state.task);
   return (
     <div id="main-wrapper" className="main-wrapper">
