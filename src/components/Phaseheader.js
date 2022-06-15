@@ -1,3 +1,5 @@
+import { handleStatusStyleName } from "../utilis/helpers";
+
 const PhaseHeader = ({ data }) => (
   <div className='phase-header'>
     <div>
@@ -6,7 +8,7 @@ const PhaseHeader = ({ data }) => (
       </h2>
     </div>
     <div className='phase-status'>
-      <div className={data?.status === 'Not Started' ? 'phase-cirle' : ( data?.status === 'In Progress' ? 'phase-cirle-black' : 'phase-cirle-green')} />
+      <div className={handleStatusStyleName(data?.status)} />
       <p>{data.status}</p>
     </div>
   </div>
