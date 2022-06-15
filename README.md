@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Audition Assigment 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Audition app is a project that helps start-up manage their stage planning. This is an MVP version.
+
+The project can be viewed online via ('App URL')[https://startup-checker.vercel.app/]
 
 ## Available Scripts
 
