@@ -1,39 +1,26 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { generateToken } from "../utilis/helpers";
+import { numTasks } from "../utilis/helpers";
+import useAddTask from "./customHooks/useAddTask";
 import { AddIcons } from "./icons/addIcons";
-import { AddNewTask } from "./reducer/TaskSlice";
 
 const PhaseFooter = ({ goals }) => {
-  const dispatch = useDispatch();
-  const [newTask, setNewTask] = useState("");
-  const addNewTask = (e) => {
-    e.preventDefault();
-    if (newTask !== "") {
-      dispatch(
-        AddNewTask({
-          stageId: goals.id,
-          task: {
-            id: generateToken(),
-            name: newTask,
-            status: false,
-          },
-        })
-      );
-      setNewTask("");
-    }
-  };
+  const { addNewTask, newTask, setNewTask } = useAddTask({ goals });
   return (
     <div className='phase-footer'>
       <div className='footer-wrapper'>
         <div className='add-steps'>
           <form onSubmit={addNewTask}>
-            <input type='text' onChange={(e) => setNewTask(e.target.value)} value={newTask} placeholder='Add a task' />
+            <input
+              type='text'
+              onChange={(e) => setNewTask(e.target.value)}
+              value={newTask}
+              placeholder='Add a task' 
+              required
+            />
             <button type='submit'>{AddIcons}</button>
           </form>
         </div>
         <div id='list-tasks'>
-          <p>{goals.todo.filter((task) => task.status).length > 0 ? `${goals.todo.filter((task) => task.status).length} / ${goals.todo.length} tasks` : `${goals?.todo?.length} tasks`}</p>
+          <p>{numTasks(goals)}</p>
         </div>
       </div>
     </div>

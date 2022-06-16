@@ -49,7 +49,7 @@ export const taskSlice = createSlice({
       }
       )
     },
-    changeProgress: (state, { payload }) => { 
+    ChangeProgress: (state, { payload }) => { 
       const { stageId, isCompleted } = payload
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
@@ -76,6 +76,11 @@ export const taskSlice = createSlice({
            if (isCompleted && each.todo.filter((e) => e.status).length === each.todo.length) {
              each.status = 'Completed'
               localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
+           }
+
+          if (isCompleted && each.todo.filter((e) => e.status).length < each.todo.length) {
+            each.status = 'In Progress'
+             localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
         }
         return each
@@ -86,6 +91,6 @@ export const taskSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { AddNewTask, ChangeTaskStatus, changeProgress, DeleteTask } = taskSlice.actions
+export const { AddNewTask, ChangeTaskStatus, ChangeProgress, DeleteTask } = taskSlice.actions
 
 export default taskSlice.reducer
