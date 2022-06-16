@@ -33,8 +33,15 @@ h1{
   font-size: 1.563rem;
   word-spacing: 2px;
   font-weight: 700;
-  margin: 2em 0;
   padding: 0;
+}
+
+#title {
+  text-align: center;
+}
+
+#title h3 {
+  font-weight: 300;
 }
 
 .phase-wrapper {
