@@ -13,7 +13,7 @@ const Main = () => {
         <div id='title'>
           <h1> My Startup Progress </h1>
           <h3>{isCompleted ? 'Congratulations! All Set' : 'Keep building your hustle'}</h3>
-          <i>{isCompleted && quote && quote}</i>
+          <i>{isCompleted && quote}</i>
         </div>
 
         <div id='each-stage'>

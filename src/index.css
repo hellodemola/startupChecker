@@ -181,4 +181,21 @@ input {
   cursor: pointer;
 }
 
+/* media query for mobile */
+@media screen and (max-width: 600px) {
+
+  .container {
+    width: 22em;
+  }
+
+.footer-wrapper {
+  align-items: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em 2em;
+}
+
+}
+
 
