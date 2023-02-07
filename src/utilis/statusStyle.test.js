@@ -10,7 +10,15 @@ describe('<handleStatusStyleName', () => {
         expect(status).toBe('phase-cirle-black');
     })
 
-    // test for completed
+// test for completed
+ test('COMPLETED_WILL_RETURN_PHASE-CIRCLE-GREEN', () => {
+        const status = handleStatusStyleName('Completed');
+        expect(status).toBe('phase-cirle-green');
+    })
 
     // test for no status
+ test('DEFAULT_WILL_RETURN_PHASE-CIRCLE', () => {
+        const status = handleStatusStyleName('Default');
+        expect(status).toBe('phase-cirle');
+    })
 })

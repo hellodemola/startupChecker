@@ -21,7 +21,7 @@ export const taskSlice = createSlice({
       }
       )
     },
-    ChangeTaskStatus: (state, { payload }) => { 
+    ChangeTaskStatus: (state, { payload }) => {
       const { stageId, taskId, isCompleted } = payload
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
@@ -38,7 +38,7 @@ export const taskSlice = createSlice({
       }
       )
     },
-    DeleteTask: (state, { payload }) => { 
+    DeleteTask: (state, { payload }) => {
       const { stageId, taskId } = payload
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
@@ -49,20 +49,20 @@ export const taskSlice = createSlice({
       }
       )
     },
-    ChangeProgress: (state, { payload }) => { 
+    ChangeProgress: (state, { payload }) => {
       const { stageId, isCompleted } = payload
       state.startupTasks = state.startupTasks.map(each => {
         if (each.id === stageId) {
-          if (isCompleted && each.todo.filter((e) => e.status).length < each.todo.length) { 
+          if (isCompleted && each.todo.filter((e) => e.status).length < each.todo.length) {
             each.status = 'In Progress'
             localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
           }
 
-            if (!isCompleted && each.todo.filter((e) => e.status).length < 1) { 
+            if (!isCompleted && each.todo.filter((e) => e.status).length < 1) {
               each.status = 'Not Started'
                localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
             }
-          
+
           if (!isCompleted && each.todo.filter((e) => e.status === true).length === 0) {
             each.status = 'Not Started'
              localStorage.setItem('stageData', JSON.stringify(state.startupTasks))
