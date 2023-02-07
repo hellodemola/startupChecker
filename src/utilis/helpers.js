@@ -4,13 +4,13 @@ export const generateToken = () => (Math.random() * 100000).toFixed(0)
 export const handleStatusStyleName = (status) => {
   switch (status) {
     case 'Not Started':
-      return 'phase-cirle' // try and make corrections
+      return 'phase-circle' // try and make corrections
     case 'In Progress':
-      return 'phase-cirle-black'
+      return 'phase-circle-black'
     case 'Completed':
-      return 'phase-cirle-green'
+      return 'phase-circle-green'
     default:
-      return 'phase-cirle'
+      return 'phase-circle'
   }
 }
 

@@ -7,7 +7,8 @@ import { renderHook } from '@testing-library/react-hooks';
 import usePhaseComp from './usePhaseComp'
 import {
 singleFoundationData,
-singlePendingData
+singlePendingData,
+singleDataThird,
 } from '../../utilis/foundation.data';
 import '@testing-library/jest-dom';
 
@@ -22,10 +23,10 @@ describe('Foundation <usePhaseComp />', () => {
         expect(result?.current?.isTasksCompleted).toBe('In Progress');
     })
 
-    //test('2_COMPLETED_TASK_of_2_FOR_FOUNDATION_RETURNS_IN_*',() => {
-    //    const {result} = renderHook(() => usePhaseComp(singlePendingData));
-    //    expect(result?.current?.isTasksCompleted).toBe('*');
-    //})
+    test('COMPLETED_TASK_of_2_FOR_FOUNDATION_RETURNS_IN_*',() => {
+        const {result} = renderHook(() => usePhaseComp(singleDataThird));
+        expect(result?.current?.isTasksCompleted).toMatch(/completed/i);
+    })
 
     // TEST FOR NO LIST
 })
