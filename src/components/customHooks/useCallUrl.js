@@ -6,7 +6,7 @@ const useCallUrl = (isCompleted) => {
   const getQuote = async () => {
     const data = await fetch('https://uselessfacts.jsph.pl/random.json')
     const json = await data.json();
-    setQuote(json.text);  
+    setQuote(json.text);
   }
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const useCallUrl = (isCompleted) => {
       return setQuote('');
     }
   }, [isCompleted])
-  
+
   return { quote };
 };
 
