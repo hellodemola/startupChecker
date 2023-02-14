@@ -18,4 +18,30 @@
       todo: []
     }
  ]
-  
+
+ export const completedData = [
+    {
+      id: 1,
+      name: "Foundation",
+      status: "Completed",
+      todo: [
+{ id: "55555", name: "target market", status: true }
+]
+    },
+ {
+      id: 2,
+      name: "Discovery",
+      status: "Completed",
+      todo: [
+{ id: "55555", name: "target market", status: true }
+]
+    },
+ {
+      id: 3,
+      name: "Delivery",
+      status: "Completed",
+      todo: [
+{ id: "55555", name: "target market", status: true }
+]
+    },
+ ]

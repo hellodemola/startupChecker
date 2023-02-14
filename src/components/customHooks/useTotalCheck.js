@@ -11,7 +11,7 @@ const useTotalCheck = (tasks) => {
     }
      return setIsCompleted(false)
   }, [taskDoneNum, totalTasks, tasks])
-  
+
   return { isCompleted }
 };
 
